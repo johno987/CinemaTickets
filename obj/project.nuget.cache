@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dAqUGeWGJt0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\willj\\source\\repos\\CinemaTickets\\CinemaTickets.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\willj\\.nuget\\packages\\pdfpig\\0.1.8\\pdfpig.0.1.8.nupkg.sha512"
+  ],
+  "logs": []
+}

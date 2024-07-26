@@ -1,10 +1,12 @@
 ﻿using System.Globalization;
 using System.Text.RegularExpressions;
+using UglyToad.PdfPig.Core;
+using static System.Net.Mime.MediaTypeNames;
 EnumerateFiles.readFiles(); //adds all the pdf file paths into a list so we can easily read them
 ReadPDFData.readPDFData(); //reads the strings and stores them in TicketReads
-SaleInfo.PopulateTicketsSold();
+ReadPDFData.AddRegionToTickets();
 //generate ticket amounts based on the word title occurrence
-
+ParseData.iterate();
 Console.ReadKey();
 
 internal class SaleInfo
@@ -16,44 +18,78 @@ internal class SaleInfo
 
     public static void PopulateTicketsSold()
     {
-        string FrenchPattern = @"Title: (?<title>.*?) Date: (?<date>\d{2}/\d{2}/\d{4}) Time: (?<time>\d{2}:\d{2})";
-        string USAPattern = @"Title: (?<title>.*?) Date: (?<date>\d{1,2}/\d{1,2}/\d{4}) Time: (?<time>\d{1,2}:\d{2})";
-        string JapanPattern = @"Title: (?<title>.*?) Date: (?<date>\d{4}/\d{2}/\d{2}) Time: (?<time>\d{2}:\d{2})";
 
-        List<Match> FrenchMatches = new List<Match>();
-        List<Match> USAMatches = new List<Match>();
-        List<Match> JapanMatches = new List<Match>();
+    }
+}
 
-        foreach (var ticket in ReadPDFData.TicketReads)
+
+internal class ParseData
+{
+    //class for regex parsing
+    public static void iterate()
+    {
+        foreach (var tickets in ReadPDFData.regionedTickets)
         {
-            var ticketString = ticket.ToString();
-            FrenchMatches.AddRange(Regex.Matches(ticketString, FrenchPattern));
-            USAMatches.AddRange(Regex.Matches(ticketString, USAPattern));
-            JapanMatches.AddRange(Regex.Matches(ticketString, JapanPattern));
+            //parse will be called from here using loop
+            Parse(tickets.Key, tickets.Value);
+            Console.WriteLine("\n");
+        }
+    }
+
+    public static void Parse(Region region, string ticketInfo) //want to try pass in a region here, and then sort the pattern on the region
+    {
+        if (region == Region.France)
+        {
+            string titlePattern = @"Title: (.*?)(?=\s+Date:|$)";
+            string datePattern = @"Date: (\d{2}/\d{2}/\d{4})";
+            string timePattern = @"Time: (\d{2}:\d{2})";
+
+
+            var titles = Regex.Matches(ticketInfo, titlePattern);
+            var dates = Regex.Matches(ticketInfo, datePattern);
+            var times = Regex.Matches(ticketInfo, timePattern);
+
+
+
+            Console.WriteLine($"Title: {titles[0].Value}");
+            Console.WriteLine($"Date: {dates[0].Value}");
+            Console.WriteLine($"Time: {times[0].Value}");
+            Console.WriteLine($"The number of tickets bought in this batch is {titles.Count}");
+        }
+        if (region == Region.USA)
+        {
+            string titlePattern = @"Title: (.*?)(?=\s+Date:|$)";
+            string datePattern = @"Date: (\d{1,2}/\d{1,2}/\d{4})";
+            string timePattern = @"Time: (\d{1,2}:\d{2} [AP]M)";
+
+            var titles = Regex.Matches(ticketInfo, titlePattern);
+            var dates = Regex.Matches(ticketInfo, datePattern);
+            var times = Regex.Matches(ticketInfo, timePattern);
+
+            Console.WriteLine($"Title: {titles[0].Groups[1].Value}");
+            Console.WriteLine($"Date: {dates[0].Groups[1].Value}");
+            Console.WriteLine($"Time: {times[0].Groups[1].Value}");
+            Console.WriteLine($"Number of tickets: {titles.Count}");
+        }
+        if (region == Region.Japan)
+        {
+            string titlePattern = @"Title: (.*?)(?=\s+Date:|$)";
+            string datePattern = @"Date: (\d{4}/\d{2}/\d{2})";
+            string timePattern = @"Time: (\d{2}:\d{2})";
+
+            // Find all matches
+            var titles = Regex.Matches(ticketInfo, titlePattern);
+            var dates = Regex.Matches(ticketInfo, datePattern);
+            var times = Regex.Matches(ticketInfo, timePattern);
+
+            // Print results
+            Console.WriteLine($"Title: {titles[0].Groups[1].Value}");
+            Console.WriteLine($"Date: {dates[0].Groups[1].Value}");
+            Console.WriteLine($"Time: {times[0].Groups[1].Value}");
+            Console.WriteLine($"Number of tickets: {titles.Count}");
         }
 
-        // Process the matches as needed, for example:
-        foreach (var match in FrenchMatches)
-        {
-            Console.WriteLine($"French Title: {match.Groups["title"].Value}, Date: {match.Groups["date"].Value}, Time: {match.Groups["time"].Value}");
-            ticketsSold.Add(new Ticket(match.Groups["title"].Value, DateTime.Parse(match.Groups["date"].Value, CultureInfo.InvariantCulture)
-                ,DateTime.ParseExact(match.Groups["time"].Value, "HH:mm", null, System.Globalization.DateTimeStyles.None)));
-        }
 
-        foreach (var match in USAMatches)
-        {
-            Console.WriteLine($"USA Title: {match.Groups["title"].Value}, Date: {match.Groups["date"].Value}, Time: {match.Groups["time"].Value}");
-            ticketsSold.Add(new Ticket(match.Groups["title"].Value, DateTime.Parse(match.Groups["date"].Value, CultureInfo.InvariantCulture)
-                ,DateTime.ParseExact(match.Groups["time"].Value, "HH:mm", null, System.Globalization.DateTimeStyles.None)));
-        }
 
-        foreach (var match in JapanMatches)
-        {
-            Console.WriteLine($"Japan Title: {match.Groups["title"].Value}, Date: {match.Groups["date"].Value}, Time: {match.Groups["time"].Value}");
-            ticketsSold.Add(new Ticket(match.Groups["title"].Value, DateTime.Parse(match.Groups["date"].Value, CultureInfo.InvariantCulture)
-                ,DateTime.ParseExact(match.Groups["time"].Value, "HH:mm", null, System.Globalization.DateTimeStyles.None)));
-        }
-
-        Console.ReadKey();
     }
 }

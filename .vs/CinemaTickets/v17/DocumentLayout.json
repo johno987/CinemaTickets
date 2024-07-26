@@ -7,6 +7,13 @@
       "RelativeMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
+=======
+      "AbsoluteMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|c:\\users\\willj\\source\\repos\\cinematickets\\readpdfdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|solutionrelative:readpdfdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+>>>>>>> DeletingWork
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\willj\\AppData\\Local\\SourceServer\\7a95bc648754cfba4726ddbd90d4700a6c15da8e062f77fbcd3d43c9c4b35942\\src\\libraries\\System.Text.RegularExpressions\\src\\System\\Text\\RegularExpressions\\ThrowHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -29,7 +36,11 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
+=======
+              "DocumentIndex": 2,
+>>>>>>> DeletingWork
               "Title": "ThrowHelper.cs",
               "DocumentMoniker": "C:\\Users\\willj\\AppData\\Local\\SourceServer\\7a95bc648754cfba4726ddbd90d4700a6c15da8e062f77fbcd3d43c9c4b35942\\src\\libraries\\System.Text.RegularExpressions\\src\\System\\Text\\RegularExpressions\\ThrowHelper.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\SourceServer\\7a95bc648754cfba4726ddbd90d4700a6c15da8e062f77fbcd3d43c9c4b35942\\src\\libraries\\System.Text.RegularExpressions\\src\\System\\Text\\RegularExpressions\\ThrowHelper.cs",
@@ -53,6 +64,28 @@
               "EditorCaption": ""
             }
           ]
+<<<<<<< HEAD
+=======
+        },
+        {
+          "DockedWidth": 1197,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReadPDFData.cs",
+              "DocumentMoniker": "C:\\Users\\willj\\source\\repos\\CinemaTickets\\ReadPDFData.cs",
+              "RelativeDocumentMoniker": "ReadPDFData.cs",
+              "ToolTip": "C:\\Users\\willj\\source\\repos\\CinemaTickets\\ReadPDFData.cs",
+              "RelativeToolTip": "ReadPDFData.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAqwDQAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T15:39:49.958Z",
+              "EditorCaption": ""
+            }
+          ]
+>>>>>>> DeletingWork
         }
       ]
     }
