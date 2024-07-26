@@ -21,3 +21,4 @@ C:\Users\willj\source\repos\CinemaTickets\obj\Debug\net8.0\refint\CinemaTickets.
 C:\Users\willj\source\repos\CinemaTickets\obj\Debug\net8.0\CinemaTickets.pdb
 C:\Users\willj\source\repos\CinemaTickets\obj\Debug\net8.0\CinemaTickets.genruntimeconfig.cache
 C:\Users\willj\source\repos\CinemaTickets\obj\Debug\net8.0\ref\CinemaTickets.dll
+C:\Users\willj\source\repos\CinemaTickets\obj\Debug\net8.0\CinemaTickets.sourcelink.json

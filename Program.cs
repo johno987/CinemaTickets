@@ -49,26 +49,42 @@ internal class ParseData
             var dates = Regex.Matches(ticketInfo, datePattern);
             var times = Regex.Matches(ticketInfo, timePattern);
 
+            var FilmTitle = titles[0].Value;
+            var FilmDate = dates[0].Value;
+            var FilmTime = times[0].Value;
 
+            //parse the date and time to the relevant Datetime formats to be passed into a new ticket
 
-            Console.WriteLine($"Title: {titles[0].Value}");
-            Console.WriteLine($"Date: {dates[0].Value}");
-            Console.WriteLine($"Time: {times[0].Value}");
-            Console.WriteLine($"The number of tickets bought in this batch is {titles.Count}");
+            Console.WriteLine($"Title: {FilmTime}");
+            Console.WriteLine($"Date: {FilmDate}");
+            Console.WriteLine($"Time: {FilmTime}");
+            Console.WriteLine($"Number of tickets: {titles.Count}");
+
+            //now need to make new class instances using these values
+            for ( int i = 0; i < titles.Count; i++ )
+            {
+                //SaleInfo.ticketsSold.Add(new Ticket(FilmTitle, ))
+            }
         }
         if (region == Region.USA)
         {
             string titlePattern = @"Title: (.*?)(?=\s+Date:|$)";
             string datePattern = @"Date: (\d{1,2}/\d{1,2}/\d{4})";
-            string timePattern = @"Time: (\d{1,2}:\d{2} [AP]M)";
+            string timePattern = @"Time: (\d{1,2}:\d{2})"; //pm can be added back in here
 
             var titles = Regex.Matches(ticketInfo, titlePattern);
             var dates = Regex.Matches(ticketInfo, datePattern);
             var times = Regex.Matches(ticketInfo, timePattern);
 
-            Console.WriteLine($"Title: {titles[0].Groups[1].Value}");
-            Console.WriteLine($"Date: {dates[0].Groups[1].Value}");
-            Console.WriteLine($"Time: {times[0].Groups[1].Value}");
+            var FilmTitle = titles[0].Groups[1].Value;
+            var FilmDate = dates[0].Groups[1].Value;
+            var FilmTime = times[0].Groups[1].Value;
+
+            //parse the date and time to the relevant Datetime formats to be passed into a new ticket
+
+            Console.WriteLine($"Title: {FilmTime}");
+            Console.WriteLine($"Date: {FilmDate}");
+            Console.WriteLine($"Time: {FilmTime}");
             Console.WriteLine($"Number of tickets: {titles.Count}");
         }
         if (region == Region.Japan)
@@ -83,9 +99,15 @@ internal class ParseData
             var times = Regex.Matches(ticketInfo, timePattern);
 
             // Print results
-            Console.WriteLine($"Title: {titles[0].Groups[1].Value}");
-            Console.WriteLine($"Date: {dates[0].Groups[1].Value}");
-            Console.WriteLine($"Time: {times[0].Groups[1].Value}");
+            var FilmTitle = titles[0].Groups[1].Value;
+            var FilmDate = dates[0].Groups[1].Value;
+            var FilmTime = times[0].Groups[1].Value;
+
+            //parse the date and time to the relevant Datetime formats to be passed into a new ticket
+
+            Console.WriteLine($"Title: {FilmTime}");
+            Console.WriteLine($"Date: {FilmDate}");
+            Console.WriteLine($"Time: {FilmTime}");
             Console.WriteLine($"Number of tickets: {titles.Count}");
         }
 
