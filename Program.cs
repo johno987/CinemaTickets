@@ -1,52 +1,59 @@
-﻿//read all the tickets from within the bin file
-//treat the varying cultures to ensure they are all formatted correctly
-//write the results of all the reads to a text file
-
-//enumerate the files within the directory to find those ending with .pdf and add them to a list to be read
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-using UglyToad.PdfPig;
-using UglyToad.PdfPig.Content;
-
+﻿using System.Globalization;
+using System.Text.RegularExpressions;
 EnumerateFiles.readFiles(); //adds all the pdf file paths into a list so we can easily read them
-
-foreach(var file in EnumerateFiles.pdfFiles)
-{
-    ReadPDFData.readPDFData(file);
-}
-
+ReadPDFData.readPDFData(); //reads the strings and stores them in TicketReads
+SaleInfo.PopulateTicketsSold();
+//generate ticket amounts based on the word title occurrence
 
 Console.ReadKey();
 
-internal static class EnumerateFiles
+internal class SaleInfo
 {
-    public static List<string> pdfFiles = new(); //contains the file path to the 3 sets of tickets to be read
-    public static void readFiles()
-    {
-        var localDirectory = AppDomain.CurrentDomain.BaseDirectory; //gets directory where the exe is placed
-        pdfFiles = Directory.GetFiles($"{localDirectory}", "*.pdf", searchOption: SearchOption.AllDirectories).ToList();
-    }
-}
+    public static List<Ticket> ticketsSold = new List<Ticket>();
+    public static readonly int TicketSaleCount = ReadPDFData.TicketReads
+    .SelectMany(x => x.ToString().Split(new[] { "Title" }, StringSplitOptions.None))
+    .Count() - ReadPDFData.TicketReads.Count();
 
-internal static class ReadPDFData
-{
-    //list of string builders, read each data in turn and add it to the string builder list at relevant index
-    public static List<StringBuilder> TicketReads = new List<StringBuilder>(EnumerateFiles.pdfFiles.Count);
-    public static void readPDFData(string filePath)
+    public static void PopulateTicketsSold()
     {
-        using (PdfDocument document = PdfDocument.Open(filePath))
+        string FrenchPattern = @"Title: (?<title>.*?) Date: (?<date>\d{2}/\d{2}/\d{4}) Time: (?<time>\d{2}:\d{2})";
+        string USAPattern = @"Title: (?<title>.*?) Date: (?<date>\d{1,2}/\d{1,2}/\d{4}) Time: (?<time>\d{1,2}:\d{2})";
+        string JapanPattern = @"Title: (?<title>.*?) Date: (?<date>\d{4}/\d{2}/\d{2}) Time: (?<time>\d{2}:\d{2})";
+
+        List<Match> FrenchMatches = new List<Match>();
+        List<Match> USAMatches = new List<Match>();
+        List<Match> JapanMatches = new List<Match>();
+
+        foreach (var ticket in ReadPDFData.TicketReads)
         {
-            var stringBuilder = new StringBuilder();
-            foreach (Page page in document.GetPages())
-            {
-                foreach (Word word in page.GetWords())
-                {
-                    stringBuilder.Append($"{word.ToString()} ");
-                }
-            }
-            Console.WriteLine(stringBuilder);
-            TicketReads.Add(stringBuilder);
+            var ticketString = ticket.ToString();
+            FrenchMatches.AddRange(Regex.Matches(ticketString, FrenchPattern));
+            USAMatches.AddRange(Regex.Matches(ticketString, USAPattern));
+            JapanMatches.AddRange(Regex.Matches(ticketString, JapanPattern));
         }
+
+        // Process the matches as needed, for example:
+        foreach (var match in FrenchMatches)
+        {
+            Console.WriteLine($"French Title: {match.Groups["title"].Value}, Date: {match.Groups["date"].Value}, Time: {match.Groups["time"].Value}");
+            ticketsSold.Add(new Ticket(match.Groups["title"].Value, DateTime.Parse(match.Groups["date"].Value, CultureInfo.InvariantCulture)
+                ,DateTime.ParseExact(match.Groups["time"].Value, "HH:mm", null, System.Globalization.DateTimeStyles.None)));
+        }
+
+        foreach (var match in USAMatches)
+        {
+            Console.WriteLine($"USA Title: {match.Groups["title"].Value}, Date: {match.Groups["date"].Value}, Time: {match.Groups["time"].Value}");
+            ticketsSold.Add(new Ticket(match.Groups["title"].Value, DateTime.Parse(match.Groups["date"].Value, CultureInfo.InvariantCulture)
+                ,DateTime.ParseExact(match.Groups["time"].Value, "HH:mm", null, System.Globalization.DateTimeStyles.None)));
+        }
+
+        foreach (var match in JapanMatches)
+        {
+            Console.WriteLine($"Japan Title: {match.Groups["title"].Value}, Date: {match.Groups["date"].Value}, Time: {match.Groups["time"].Value}");
+            ticketsSold.Add(new Ticket(match.Groups["title"].Value, DateTime.Parse(match.Groups["date"].Value, CultureInfo.InvariantCulture)
+                ,DateTime.ParseExact(match.Groups["time"].Value, "HH:mm", null, System.Globalization.DateTimeStyles.None)));
+        }
+
         Console.ReadKey();
     }
 }
