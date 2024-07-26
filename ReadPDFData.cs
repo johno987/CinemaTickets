@@ -3,6 +3,7 @@
 //write the results of all the reads to a text file
 
 //enumerate the files within the directory to find those ending with .pdf and add them to a list to be read
+using System.Net.WebSockets;
 using System.Text;
 using UglyToad.PdfPig;
 using UglyToad.PdfPig.Content;
@@ -11,6 +12,7 @@ internal static class ReadPDFData
 {
     //list of string builders, read each data in turn and add it to the string builder list at relevant index
     public static List<StringBuilder> TicketReads = new List<StringBuilder>(EnumerateFiles.pdfFiles.Count);
+    public static Dictionary<Region, string> regionedTickets = new Dictionary<Region, string>();
     public static void readPDFData()
     {
         foreach (var file in EnumerateFiles.pdfFiles)
@@ -31,7 +33,27 @@ internal static class ReadPDFData
         }
 
     }
+    public static void AddRegionToTickets()
+    {
+        foreach(var words in TicketReads)
+        {
+            if(words.ToString().Contains("www.ourCinema.com"))
+            {
+                regionedTickets[Region.USA] = words.ToString();
+            }
+            else if (words.ToString().Contains("www.ourCinema.jp"))
+            {
+                regionedTickets[Region.Japan] = words.ToString();
+            }
+            else if (words.ToString().Contains("www.ourCinema.fr"))
+            {
+                regionedTickets[Region.France] = words.ToString();
+            }
+        }
+    }
 }
+
+
 
 
 
