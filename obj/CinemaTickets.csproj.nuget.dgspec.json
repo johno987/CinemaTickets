@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\willj\\source\\repos\\CinemaTickets\\CinemaTickets.csproj": {}
+    "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\CinemaTickets.csproj": {}
   },
   "projects": {
-    "C:\\Users\\willj\\source\\repos\\CinemaTickets\\CinemaTickets.csproj": {
+    "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\CinemaTickets.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\willj\\source\\repos\\CinemaTickets\\CinemaTickets.csproj",
+        "projectUniqueName": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\CinemaTickets.csproj",
         "projectName": "CinemaTickets",
-        "projectPath": "C:\\Users\\willj\\source\\repos\\CinemaTickets\\CinemaTickets.csproj",
-        "packagesPath": "C:\\Users\\willj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\willj\\source\\repos\\CinemaTickets\\obj\\",
+        "projectPath": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\CinemaTickets.csproj",
+        "packagesPath": "C:\\Users\\Will Johnson\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\willj\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Will Johnson\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -70,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

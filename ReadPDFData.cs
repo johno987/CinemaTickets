@@ -27,13 +27,13 @@ internal static class ReadPDFData
                         stringBuilder.Append($"{word.ToString()} ");
                     }
                 }
-                Console.WriteLine($"{stringBuilder}\n\n");
+                //Console.WriteLine($"{stringBuilder}\n\n");
                 TicketReads.Add(stringBuilder);
             }
         }
 
     }
-    public static void AddRegionToTickets()
+    public static void AddRegionToTicketsAndStore()
     {
         foreach(var words in TicketReads)
         {
