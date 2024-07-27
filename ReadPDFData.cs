@@ -1,19 +1,13 @@
-﻿//read all the tickets from within the bin file
-//treat the varying cultures to ensure they are all formatted correctly
-//write the results of all the reads to a text file
-
-//enumerate the files within the directory to find those ending with .pdf and add them to a list to be read
-using System.Net.WebSockets;
-using System.Text;
+﻿using System.Text;
 using UglyToad.PdfPig;
 using UglyToad.PdfPig.Content;
 
 internal static class ReadPDFData
 {
-    //list of string builders, read each data in turn and add it to the string builder list at relevant index
-    public static List<StringBuilder> TicketReads = new List<StringBuilder>(EnumerateFiles.pdfFiles.Count);
-    public static Dictionary<Region, string> regionedTickets = new Dictionary<Region, string>();
-    public static void readPDFData()
+    public static List<StringBuilder> TicketReads = new List<StringBuilder>(EnumerateFiles.pdfFiles.Count);   //list of string builders, read each data in turn and add it to the string builder list, this then contains the strings from
+    //each ticket
+    public static Dictionary<Region, string> regionedTickets = new Dictionary<Region, string>(); //regioned tickets, string data combined with the region so we can properly parse the date and time expressions later
+    public static void readPDFData() //iterates the list of file paths one by one, adds all the strings from each file into the ticketReads list, where [0] = ticket 1, [1] = ticket 2 etc..
     {
         foreach (var file in EnumerateFiles.pdfFiles)
         {
@@ -24,18 +18,18 @@ internal static class ReadPDFData
                 {
                     foreach (Word word in page.GetWords())
                     {
-                        stringBuilder.Append($"{word.ToString()} ");
+                        stringBuilder.Append($"{word.ToString()} "); //add each individual word from the pdf ticket into the string
                     }
                 }
-                //Console.WriteLine($"{stringBuilder}\n\n");
-                TicketReads.Add(stringBuilder);
+                TicketReads.Add(stringBuilder); //once we reach the end of the strings within the file, we add the full stirng into the ticket list
             }
         }
 
+        AddRegionToTicketsAndStore();
     }
-    public static void AddRegionToTicketsAndStore()
+    private static void AddRegionToTicketsAndStore() //here we add the relevant region to the ticket, do this by checking what email address each ticket contains
     {
-        foreach(var words in TicketReads)
+        foreach(var words in TicketReads) //here word is an individual PDF of tickets, therefore we can check if it contains specific email addreses to identify the regions
         {
             if(words.ToString().Contains("www.ourCinema.com"))
             {
@@ -53,24 +47,3 @@ internal static class ReadPDFData
     }
 }
 
-
-
-
-
-//make relevant class instance with tickets
-//foreach (var region in ReadPDFData.TicketReads)
-//{
-//    if (region.ToString().Contains("www.ourCinema.com"))
-//    {
-//        var USAticket = new Ticket();
-//    }
-//    else if (region.ToString().Contains("www.ourCinema.jp"))
-//    {
-//        var JapanTicket = new Ticket();
-//    }
-//    else if (region.ToString().Contains("www.ourCinema.fr"))
-//    {
-//        var FrandeTicket = new Ticket();
-//    }
-
-//}
