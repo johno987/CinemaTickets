@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|c:\\users\\will johnson\\source\\repos\\cinematickets\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|c:\\users\\will johnson\\source\\repos\\cinematickets\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|solutionrelative:ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|c:\\users\\will johnson\\source\\repos\\cinematickets\\region.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|solutionrelative:region.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|c:\\users\\will johnson\\source\\repos\\cinematickets\\readpdfdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|solutionrelative:readpdfdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|c:\\users\\will johnson\\source\\repos\\cinematickets\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|c:\\users\\will johnson\\source\\repos\\cinematickets\\printandlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|solutionrelative:printandlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|c:\\users\\will johnson\\source\\repos\\cinematickets\\parsedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|solutionrelative:parsedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|c:\\users\\will johnson\\source\\repos\\cinematickets\\enumeratefiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|solutionrelative:enumeratefiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,19 +38,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 909,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReadPDFData.cs",
-              "DocumentMoniker": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\ReadPDFData.cs",
-              "RelativeDocumentMoniker": "ReadPDFData.cs",
-              "ToolTip": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\ReadPDFData.cs",
-              "RelativeToolTip": "ReadPDFData.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
+              "DocumentIndex": 0,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\Ticket.cs",
+              "RelativeDocumentMoniker": "Ticket.cs",
+              "ToolTip": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\Ticket.cs",
+              "RelativeToolTip": "Ticket.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-27T21:53:45.979Z",
+              "WhenOpened": "2024-07-27T21:56:59.209Z",
               "EditorCaption": ""
             },
             {
@@ -47,7 +67,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Region.cs",
+              "DocumentMoniker": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\Region.cs",
+              "RelativeDocumentMoniker": "Region.cs",
+              "ToolTip": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\Region.cs",
+              "RelativeToolTip": "Region.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T21:56:40.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "printAndLog.cs",
+              "DocumentMoniker": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\printAndLog.cs",
+              "RelativeDocumentMoniker": "printAndLog.cs",
+              "ToolTip": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\printAndLog.cs",
+              "RelativeToolTip": "printAndLog.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T21:56:31.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ParseData.cs",
+              "DocumentMoniker": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\ParseData.cs",
+              "RelativeDocumentMoniker": "ParseData.cs",
+              "ToolTip": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\ParseData.cs",
+              "RelativeToolTip": "ParseData.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T21:56:27.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EnumerateFiles.cs",
+              "DocumentMoniker": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\EnumerateFiles.cs",
+              "RelativeDocumentMoniker": "EnumerateFiles.cs",
+              "ToolTip": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\EnumerateFiles.cs",
+              "RelativeToolTip": "EnumerateFiles.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T21:56:24.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReadPDFData.cs",
+              "DocumentMoniker": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\ReadPDFData.cs",
+              "RelativeDocumentMoniker": "ReadPDFData.cs",
+              "ToolTip": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\ReadPDFData.cs",
+              "RelativeToolTip": "ReadPDFData.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwAoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T21:53:45.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
