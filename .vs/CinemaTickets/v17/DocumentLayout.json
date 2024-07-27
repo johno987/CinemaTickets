@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|c:\\users\\will johnson\\source\\repos\\cinematickets\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|c:\\users\\will johnson\\source\\repos\\cinematickets\\readpdfdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C9261AC-8C95-45BD-9994-E1D6280B18CD}|CinemaTickets.csproj|solutionrelative:readpdfdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 909,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReadPDFData.cs",
+              "DocumentMoniker": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\ReadPDFData.cs",
+              "RelativeDocumentMoniker": "ReadPDFData.cs",
+              "ToolTip": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\ReadPDFData.cs",
+              "RelativeToolTip": "ReadPDFData.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T21:53:45.979Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -36,7 +53,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Will Johnson\\source\\repos\\CinemaTickets\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-26T12:56:53.714Z",
               "EditorCaption": ""
