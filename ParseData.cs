@@ -6,10 +6,10 @@ internal class ParseData
     //class for regex parsing
     public static void IterateAndParseInfo() //loop through the tickets and associated regions and parse them into the proper format depending on their origin
     {
-        foreach (var tickets in ReadPDFData.regionedTickets) //here regionedTickets is a dictionary of <string, Region> which allows us to identify where the tickets are from
+        foreach (var tickets in ReadPDFData.regionedTickets2) //here regionedTickets is a dictionary of <string, Region> which allows us to identify where the tickets are from
         {
             //parse will be called from here using loop
-            ParseByRegion(tickets.Key, tickets.Value);
+            ParseByRegion(tickets.region, tickets.TicketInfo);
         }
     }
 

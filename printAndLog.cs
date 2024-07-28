@@ -14,12 +14,11 @@ internal class printAndLog
     {
         const string fileName = "Tickets.txt";
         string currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-        using (StreamWriter outputFile = new StreamWriter(Path.Combine(currentDirectory, fileName), false))
+        using StreamWriter outputFile = new StreamWriter(Path.Combine(currentDirectory, fileName), false);
+        Console.WriteLine($"The ticket data will now be wrote to {Path.Combine(currentDirectory, fileName)}");
+        foreach (var line in SaleInfo.ticketsSold)
         {
-            foreach(var line in SaleInfo.ticketsSold)
-            {
-                outputFile.WriteLine(line);
-            }
+            outputFile.WriteLine(line);
         }
     }
 }

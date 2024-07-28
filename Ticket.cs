@@ -1,5 +1,9 @@
 ﻿internal class Ticket //class to hold the ticket info once parsed
 {
+    public Ticket(Region region)
+    {
+
+    }
     public Ticket(string title, DateTime ticketDate, Region region)
     {
         Title = title;
