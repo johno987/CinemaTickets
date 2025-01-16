@@ -1,6 +1,6 @@
 # Cinema Ticket Parser
 
-This project is a solution to a Udemy course challenge: parsing cinema tickets in JSON format using C#. The program demonstrates key skills in working with JSON data, object-oriented programming, and basic C# features.
+This project is a solution to a Udemy course challenge: parsing cinema tickets in PDF format using C#. The program demonstrates key skills in working with PDF data, object-oriented programming, and basic C# features.
 
 ---
 
@@ -20,9 +20,9 @@ The **Cinema Ticket Parser** reads JSON-formatted data about cinema tickets, pro
 
 - Parses JSON files containing cinema ticket information.
 - Extracts and displays key details such as movie names, times, and ticket prices.
-- Handles errors in JSON structure gracefully.
+- Handles errors in parsing structures gracefully.
 - Demonstrates use of:
-  - **JSON deserialization** using JsonSerializer.
+  - **PDF Parsing** Using PDFPig to parse the PDF data
   - Basic object-oriented design in C#.
 
 ---
